@@ -14,7 +14,13 @@ function addBookToLibrary(myLibrary){
 
     for(i = 0; i < myLibrary.length; i++){
         let card = document.createElement('div');
-        card.textContent += JSON.stringify(myLibrary[i]);
+        card.classList.add('book-card');
+        card.innerHTML = `
+            <p>Author: ${myLibrary[i].author}</p>
+            <p>Title: ${myLibrary[i].title}</p>
+            <p>Page number: ${myLibrary[i].pgnumb}</p>
+            <p>Read: ${myLibrary[i].read ? 'Yes' : 'No'}</p>
+        `;
         document.getElementById('libraryContainer').appendChild(card);
     }
 }
