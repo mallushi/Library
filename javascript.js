@@ -9,6 +9,12 @@ function Book(author, title, pgnumb, read){
     this.read = read;
 }
 
+//add function to book constructor
+Book.prototype.toggleReadStatus = function(){
+    this.read = !this.read;
+}
+
+//display book objects as cards
 function addBookToLibrary(myLibrary){
     document.getElementById('libraryContainer').innerHTML = '';
 
@@ -19,8 +25,23 @@ function addBookToLibrary(myLibrary){
             <p>Author: ${myLibrary[i].author}</p>
             <p>Title: ${myLibrary[i].title}</p>
             <p>Page number: ${myLibrary[i].pgnumb}</p>
-            <p>Read: ${myLibrary[i].read ? 'Yes' : 'No'}</p>
+            <button class="toggle-read" data-index="${[i]}">${myLibrary[i].read ? 'Read' : 'Unread'}</button><br>
+            <button class="delete" data-index="${[i]}">Delete</button>
         `;
+
+        //event listener to toggle between read and unread status
+        card.querySelector('.toggle-read').addEventListener('click', function(){
+            let index = this.getAttribute('data-index');
+            myLibrary[index].toggleReadStatus();
+            addBookToLibrary(myLibrary);
+        })
+
+        //event listener to delete book when button is clicked
+        card.querySelector('.delete').addEventListener('click', function(){
+            let index = this.getAttribute('data-index');
+            myLibrary.splice(index, 1);
+            addBookToLibrary(myLibrary);
+        })
         document.getElementById('libraryContainer').appendChild(card);
     }
 }
@@ -58,8 +79,9 @@ document.getElementById('bookForm').addEventListener('submit', function(event){
     document.getElementById('author').value = '';
     document.getElementById('title').value = '';
     document.getElementById('pgnumb').value = '';
-    document.getElementById('read').checked = '';
+    document.getElementById('read').checked = false;
 
     //close the dialog afer submission
     dialog.close();
 });
+
