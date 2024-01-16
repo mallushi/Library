@@ -22,9 +22,9 @@ function addBookToLibrary(myLibrary){
         let card = document.createElement('div');
         card.classList.add('book-card');
         card.innerHTML = `
-            <p>Author: ${myLibrary[i].author}</p>
-            <p>Title: ${myLibrary[i].title}</p>
-            <p>Page number: ${myLibrary[i].pgnumb}</p>
+            <p class="card" class="card-title">Title: ${myLibrary[i].title}</p>
+            <p class="card" class="card-author">Author: ${myLibrary[i].author}</p>
+            <p class="card" class="card-author">Page number: ${myLibrary[i].pgnumb}</p>
             <button class="toggle-read" data-index="${[i]}">${myLibrary[i].read ? 'Read' : 'Unread'}</button><br>
             <button class="delete" data-index="${[i]}">Delete</button>
         `;
@@ -84,4 +84,5 @@ document.getElementById('bookForm').addEventListener('submit', function(event){
     //close the dialog afer submission
     dialog.close();
 });
+
 

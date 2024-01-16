@@ -1,0 +1,133 @@
+body{
+    margin: 0px;
+    background-color: rgb(209, 248, 248);
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+    background-color: rgb(102, 228, 245);
+    font-size: 40px;
+    color: rgb(70, 69, 69);
+    box-shadow: 0px 5px 10px 5px rgb(223, 222, 222);
+}
+
+#show{
+    margin: 10px;
+    background-color: rgb(121, 233, 195);
+    border-color: rgb(121, 233, 195);
+    border-radius: 25px;
+    font-size: 25px;
+    padding: 10px;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+
+dialog{
+    border-radius: 10px;
+    border-color: rgb(116, 36, 136);
+    background-color: rgb(240, 209, 241);
+    color:  rgb(70, 69, 69);
+    font-size: 20px;
+    width: 300px;
+    position: relative;
+}
+
+form{
+    padding: 20px;
+}
+
+input[type=text], input[type=number]{
+    width: 250px;
+    margin-top: 3px;
+    height: 30px;
+    font-size: 20px;
+}
+
+.container{
+    display: grid;
+    margin-bottom: 10px;
+}
+
+.cancel{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#hide{
+    border: none;
+    background-color:  rgb(240, 209, 241);
+}
+
+svg {
+    height: 30px;
+    width: 30px;
+}
+
+svg path{
+    fill: rgb(70, 69, 69);
+}
+
+input[type=submit]{
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(121, 233, 195);
+    font-size: 20px;
+    padding: 10px;
+    margin-top: 50px;
+    margin-left: 25%;
+}
+
+h2{
+    margin-left: 20px;
+}
+
+#libraryContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.book-card{
+    background-color: white;
+    border-radius: 10px;
+    width: 300px;
+    margin: 30px;
+}
+
+.card{
+    padding-top: 10px;
+    padding-left: 10px;
+    border-bottom: 1px solid gray;
+    font-size: 20px;
+    
+}
+
+.delete{
+    border: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-bottom: 0px;
+    width: 100%;
+    height: 40px;
+    font-size: 20px;
+    background-color: rgb(248, 102, 102);
+}
+
+.toggle-read{
+    border: none;
+    margin-bottom: 0px;
+    width: 100%;
+    height: 40px;
+    font-size: 20px;
+    background-color: rgb(121, 233, 195);
+}
+
+.toggle-read.clicked {
+    background-color: gray;
+}
+
